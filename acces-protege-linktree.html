@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accès protégé Linktree</title>
+</head>
+<body>
+  <h3>Entrez le mot de passe pour accéder à la page Linktree :</h3>
+  <input type="password" id="pwd" placeholder="Mot de passe" />
+  <button onclick="checkPwd()">Valider</button>
+
+  <script>
+    function checkPwd() {
+      const pass = document.getElementById('pwd').value;
+      const correct = "Responsables2025/";
+      if (pass === correct) {
+        window.location.href = "https://linktr.ee/responsables5";
+      } else {
+        alert("Mot de passe incorrect !");
+      }
+    }
+  </script>
+</body>
+</html>
