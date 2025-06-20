@@ -3,22 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <title>Accès protégé Linktree</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: orange;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 8px;
+      font-size: 16px;
+      width: 260px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: orange;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #e69500;
+    }
+  </style>
 </head>
 <body>
-  <h3>Entrez le mot de passe pour accéder à la page Linktree :</h3>
+
+  <h1>O'TACOS BOULOGNE SUR MER</h1>
+
+  <input type="text" id="login" placeholder="Identifiant" />
   <input type="password" id="pwd" placeholder="Mot de passe" />
-  <button onclick="checkPwd()">Valider</button>
+  <button onclick="checkCredentials()">Valider</button>
 
   <script>
-    function checkPwd() {
+    function checkCredentials() {
+      const user = document.getElementById('login').value.trim().toLowerCase();
       const pass = document.getElementById('pwd').value;
-      const correct = "Responsables2025/";
-      if (pass === correct) {
+      const correctUser = "otacos2019";
+      const correctPass = "Otacos2025@";
+
+      if (user === correctUser && pass === correctPass) {
         window.location.href = "https://linktr.ee/responsables5";
       } else {
-        alert("Mot de passe incorrect !");
+        alert("Identifiant ou mot de passe incorrect !");
       }
     }
   </script>
+
 </body>
 </html>
